@@ -9,6 +9,10 @@ class Category(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     description = models.TextField(blank=True, max_length=256)
 
+    class Meta(object):
+    	ordering = ('name',)
+
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
